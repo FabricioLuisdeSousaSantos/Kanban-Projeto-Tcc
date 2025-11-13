@@ -1,0 +1,55 @@
+body{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: #192e03;
+    overflow: hidden;
+}
+
+main{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+
+.kanban-column{
+    width: 20%;
+    height: 700px;
+    background-color: #bbf451;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.kanban-column .label-column{
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.kanban-column .add-card{
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5%;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    border: 2px solid black;
+
+}
+
+.kanban-column .cards{
+    background-color: whitesmoke;
+    height: 90%;
+}
