@@ -4,15 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <script defer src="./script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
     <title>Document</title>
+    <script src="DragAndDrop.js"></script>
+    <script src="Cards.js"></script>
 </head>
 <body>
     <main>
+
+        <dialog open>
+            <label>Titulo</label>
+            <input type="text">
+            <label>Descrição</label>
+            <input type="text">
+            <label>Entrega</label>
+            <input type="date">
+            <button>Salvar</button>
+            <button>Cancelar</button>
+        </dialog>
+
         <div class="kanban-column">
             <h3 class="label-column">Para Fazer</h3>
             <a class="add-card" href="">Adicionar Card</a>
             <div class="cards">
+                <div id="card-339u313" class="card">
+                    <h3>Nome</h3>
+                    <p>Descrição</p>
+                    <p>00-00-0000</p>
+                    <button onclick="deleteCard('card-339u313')">Excluir</button>
+                </div>
             </div>
         </div>
 

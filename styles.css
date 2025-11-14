@@ -7,6 +7,7 @@ body{
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: #192e03;
     overflow: hidden;
+    outline: none;
 }
 
 main{
@@ -45,11 +46,22 @@ main{
     text-decoration: none;
     color: black;
     font-weight: bold;
-    border: 2px solid black;
 
 }
 
 .kanban-column .cards{
     background-color: whitesmoke;
     height: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+.kanban-column .cards .card{
+    background-color: #bbf451;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
