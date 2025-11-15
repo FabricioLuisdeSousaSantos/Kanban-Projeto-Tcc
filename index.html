@@ -4,29 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    
     <title>Document</title>
-    <script src="DragAndDrop.js"></script>
-    <script src="Cards.js"></script>
 </head>
 <body>
     <main>
 
-        <dialog open>
+        <dialog id="modal-add-card">
             <label>Titulo</label>
-            <input type="text">
+            <input id="title-input-modal" type="text">
             <label>Descrição</label>
-            <input type="text">
+            <input id="descri-input-modal" type="text">
             <label>Entrega</label>
-            <input type="date">
-            <button>Salvar</button>
-            <button>Cancelar</button>
+            <input id="date-input-modal" type="date">
+            <button id="save-card-button" >Salvar</button>
+            <button id="cancel-card-button" >Cancelar</button>
         </dialog>
 
         <div class="kanban-column">
             <h3 class="label-column">Para Fazer</h3>
-            <a class="add-card" href="">Adicionar Card</a>
-            <div class="cards">
+            <a id="todo-add-card" class="add-card">Adicionar Card</a>
+            <div id="todo" class="cards">
                 <div id="card-339u313" class="card">
                     <h3>Nome</h3>
                     <p>Descrição</p>
@@ -38,19 +36,25 @@
 
         <div class="kanban-column">
             <h3 class="label-column">Fazendo</h3>
-            <a class="add-card" href="">Adicionar Card</a>
-            <div class="cards">
+            <a id="doing-add-card" class="add-card">Adicionar Card</a>
+            <div id="doing" class="cards">
             </div>
         </div>
 
         <div class="kanban-column">
             <h3 class="label-column">Feito</h3>
-            <a class="add-card" href="">Adicionar Card</a>
-            <div class="cards">
+            <a id="done-add-card" class="add-card">Adicionar Card</a>
+            <div id="done" class="cards">
             </div>
         </div>
         
     </main>
     
+
+
+
 </body>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <script src="DragAndDrop.js"></script>
+    <script src="Cards.js"></script>
 </html>
