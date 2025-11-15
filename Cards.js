@@ -3,126 +3,44 @@ function deleteCard(id){
 }
 
 const todoAddCard  = document.getElementById('todo-add-card');
-const doingAddCard = document.getElementById('doing-add-card');
-const doneAddCard  = document.getElementById('done-add-card');
-
 const modalAddCard = document.getElementById('modal-add-card');
 
-todoAddCard.addEventListener('click', e =>{
-    modalAddCard.showModal();
+const saveButton   = document.getElementById('save-card-button');
+const cancelButton = document.getElementById('cancel-card-button');
 
-    document.getElementById("save-card-button").addEventListener('click', e => {
-        var title        = document.getElementById('title-input-modal').value;
-        var description  = document.getElementById('descri-input-modal').value;
-        var date         = document.getElementById('date-input-modal').value;
-        const newCardEmpty = document.createElement("div");
-        const newId        = ("card-" + crypto.randomUUID().toString()).toString(); 
-        newCardEmpty.id    = newId; 
-        const newCardCode  = `
-                <h3>${title}</h3>
-                <p>${description}</p>
-                <p>${date}</p>
-                <button onclick="deleteCard('${newId}')">Excluir</button>
-        `;
-        newCardEmpty.innerHTML = newCardCode;
-        newCardEmpty.classList.add('card');
+saveButton.addEventListener('click', handleSaveCard);
+cancelButton.addEventListener('click', () => modalAddCard.close());
 
-        const columnTodo = document.getElementById('todo').appendChild(newCardEmpty);
-    })
+function handleSaveCard() {
+    const title       = document.getElementById('title-input-modal').value;
+    const description = document.getElementById('descri-input-modal').value;
+    const date        = document.getElementById('date-input-modal').value;
 
-    document.getElementById("cancel-card-button").addEventListener('click', e => {
+    if (!title && !description && !date){
         modalAddCard.close();
-    })
+        return ;
+    }
 
-});
+    const newCardEmpty = document.createElement("div");
+    const newId        = "card-" + crypto.randomUUID();
+    newCardEmpty.id    = newId;
+    newCardEmpty.classList.add('card');
 
+    newCardEmpty.innerHTML = `
+        <h3 contenteditable="true">${title}</h3>
+        <p contenteditable="true" >${description}</p>
+        <p contenteditable="true" >${date}</p>
+        <button onclick="deleteCard('${newId}')">Excluir</button>
+    `;
 
+    document.getElementById('todo').appendChild(newCardEmpty);
 
+    document.getElementById('title-input-modal').value = '';
+    document.getElementById('descri-input-modal').value = '';
+    document.getElementById('date-input-modal').value = '';
+    modalAddCard.close();
+}
 
-
-
-
-
-
-
-
-
-
-
-doingAddCard.addEventListener('click', e =>{
+todoAddCard.addEventListener('click', () => {
     modalAddCard.showModal();
-
-    document.getElementById("save-card-button").addEventListener('click', e => {
-        var title        = document.getElementById('title-input-modal').value;
-        var description  = document.getElementById('descri-input-modal').value;
-        var date         = document.getElementById('date-input-modal').value;
-        const newCardEmpty = document.createElement("div");
-        const newId        = ("card-" + crypto.randomUUID().toString()).toString(); 
-        newCardEmpty.id    = newId; 
-        const newCardCode  = `
-                <h3>${title}</h3>
-                <p>${description}</p>
-                <p>${date}</p>
-                <button onclick="deleteCard('${newId}')">Excluir</button>
-        `;
-        newCardEmpty.innerHTML = newCardCode;
-        newCardEmpty.classList.add('card');
-
-        const columnDoing = document.getElementById('doing').appendChild(newCardEmpty);
-    })
-
-    document.getElementById("cancel-card-button").addEventListener('click', e => {
-        modalAddCard.close();
-    })
-
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-doneAddCard.addEventListener('click', e =>{
-    modalAddCard.showModal();
-
-    document.getElementById("save-card-button").addEventListener('click', e => {
-        var title        = document.getElementById('title-input-modal').value;
-        var description  = document.getElementById('descri-input-modal').value;
-        var date         = document.getElementById('date-input-modal').value;
-        const newCardEmpty = document.createElement("div");
-        const newId        = ("card-" + crypto.randomUUID().toString()).toString(); 
-        newCardEmpty.id    = newId; 
-        const newCardCode  = `
-                <h3>${title}</h3>
-                <p>${description}</p>
-                <p>${date}</p>
-                <button onclick="deleteCard('${newId}')">Excluir</button>
-        `;
-        newCardEmpty.innerHTML = newCardCode;
-        newCardEmpty.classList.add('card');
-
-        const columnDone = document.getElementById('done').appendChild(newCardEmpty);
-    })
-
-    document.getElementById("cancel-card-button").addEventListener('click', e => {
-        modalAddCard.close();
-    })
-
 });

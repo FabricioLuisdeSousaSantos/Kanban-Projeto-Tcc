@@ -46,6 +46,7 @@ main{
     text-decoration: none;
     color: black;
     font-weight: bold;
+    cursor: pointer;
 
 }
 
@@ -64,4 +65,18 @@ main{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+#save-board{
+    background-color: #bbf451;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    top: 85%;
+    left: 90%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 }

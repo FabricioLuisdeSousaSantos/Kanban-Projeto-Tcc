@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     
-    <title>Document</title>
+    <title>Kanban</title>
 </head>
 <body>
     <main>
-
         <dialog id="modal-add-card">
             <label>Titulo</label>
             <input id="title-input-modal" type="text">
@@ -20,41 +19,32 @@
             <button id="save-card-button" >Salvar</button>
             <button id="cancel-card-button" >Cancelar</button>
         </dialog>
-
-        <div class="kanban-column">
+        
+        <div class="kanban-column" id="col-todo">
             <h3 class="label-column">Para Fazer</h3>
             <a id="todo-add-card" class="add-card">Adicionar Card</a>
             <div id="todo" class="cards">
-                <div id="card-339u313" class="card">
-                    <h3>Nome</h3>
-                    <p>Descrição</p>
-                    <p>00-00-0000</p>
-                    <button onclick="deleteCard('card-339u313')">Excluir</button>
-                </div>
             </div>
         </div>
 
-        <div class="kanban-column">
+        <div class="kanban-column" id="col-doing">
             <h3 class="label-column">Fazendo</h3>
-            <a id="doing-add-card" class="add-card">Adicionar Card</a>
             <div id="doing" class="cards">
             </div>
         </div>
 
-        <div class="kanban-column">
+        <div class="kanban-column" id="col-done">
             <h3 class="label-column">Feito</h3>
-            <a id="done-add-card" class="add-card">Adicionar Card</a>
             <div id="done" class="cards">
             </div>
         </div>
-        
     </main>
-    
 
-
+    <a id="save-board" onclick="saveDataBoard()">Salvar Conteúdo</a>
 
 </body>
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
     <script src="DragAndDrop.js"></script>
     <script src="Cards.js"></script>
+    <script src="SaveBoard.js"></script>
 </html>
