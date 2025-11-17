@@ -8,6 +8,7 @@ function saveDataBoard(){
     localStorage.setItem('todo-cards', todoHTML);
     localStorage.setItem('doing-cards', doingHTML);
     localStorage.setItem('done-cards', doneHTML);
+    alert("O contéudo foi salvo!");
 }
 
 function loadDataBoard(){

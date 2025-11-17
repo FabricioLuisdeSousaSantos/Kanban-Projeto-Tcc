@@ -1,13 +1,22 @@
+:root{
+    --border-r: 16px;
+    --color-01: #faf9f5;
+    --color-02: #414141;
+    --color-03: #bbf451;
+}
+
 body{
     display: flex;
     width: 100vw;
     height: 100vh;
     justify-content: center;
     align-items: center;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background-color: #192e03;
-    overflow: hidden;
+    background-color: var(--color-01);
+    border: var(--border-default);
+    overflow-x: hidden;
     outline: none;
+    font-family: "Geologica", sans-serif;
+    gap: 10px;
 }
 
 main{
@@ -19,16 +28,37 @@ main{
     gap: 100px;
 }
 
+button{
+  border-radius: 10% !important;
+  width: 80px !important;
+  height: 50px !important;
+  border: none !important;
+  background-color: var(--color-03) !important;
+  color: var(--color-02) !important;
+  font-size: 24px;
+  cursor: pointer;
+  font-weight: 500 !important;
+}
+
+button:hover{
+    background-color: var(--color-01);
+}
+
 .kanban-column{
     width: 20%;
+    min-height: 700px;
+    max-width: 4000px;
     height: 700px;
-    background-color: #bbf451;
+    background-color: var(--color-03);
     display: flex;
     flex-direction: column;
     justify-content: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    border-radius: var(--border-r);
 }
 
 .kanban-column .label-column{
+    color: white;
     height: 10%;
     display: flex;
     justify-content: center;
@@ -38,39 +68,65 @@ main{
 }
 
 .kanban-column .add-card{
-    background-color: whitesmoke;
+    background-color: var(--color-03);
+    border: none !important;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 5%;
     text-decoration: none;
     color: black;
     font-weight: bold;
     cursor: pointer;
+    position: fixed;
+    top: 70%;
+    left: 90%;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
 
 }
 
+.kanban-column .add-card svg{
+    color: white;
+}
+
 .kanban-column .cards{
-    background-color: whitesmoke;
-    height: 90%;
+    background-color: white;
+    height: fit-content;
+    min-height: 90%;
     display: flex;
     flex-direction: column;
     gap: 10px;
+    border-radius: var(--border-r);
+    padding-top: 10px;
+    padding: 10px;
+    overflow-y: auto;
+    align-items: center;
 
 }
 
 .kanban-column .cards .card{
-    background-color: #bbf451;
+    background-color: whitesmoke;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border: none;
+    height: fit-content;
+    width: fit-content;
+    
+}
+
+.kanban-column .cards .card h3{
+    font-weight: 500 !important;
 }
 
 #save-board{
     background-color: #bbf451;
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
     position: fixed;
     top: 85%;
     left: 90%;
@@ -79,4 +135,42 @@ main{
     justify-content: center;
     align-items: center;
     padding: 20px;
+}
+
+#save-board svg{
+    color: white;
+}
+
+#modal-add-card{
+    padding: 20px;
+    border-radius: var(--border-r);
+}
+
+#modal-add-card div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#modal-add-card div label{
+    font-weight: 500;
+}
+
+#modal-add-card div input{
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    padding: 10px;
+    outline: 0px !important;
+    border: 0px !important;
+}
+
+#modal-add-card div button{
+    color: white !important;
+}
+
+#modal-add-card div textarea{
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    padding: 5px;
+    outline: 0px !important;
+    border: 0px !important;
 }
